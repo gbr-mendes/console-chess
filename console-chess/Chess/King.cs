@@ -1,7 +1,7 @@
 ﻿using board;
 using board.Enum;
 
-namespace xadrez_console.Xadrez
+namespace console_chess.Xadrez
 {
     internal class King : Piece
     {
