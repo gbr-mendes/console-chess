@@ -22,7 +22,7 @@ namespace console_chess.Chess
         {
             bool[,] moviments = new bool[Board.Lines, Board.Columns];
             Position position = new Position(0, 0);
-            // up
+            // N
             position.SetValues(Position.Line - 1, Position.Column);
             while (Board.PositionIsValid(position) && CanMove(position))
             {
@@ -34,7 +34,7 @@ namespace console_chess.Chess
                 position.Line = position.Line - 1;
             }
 
-            // down
+            // S
             position.SetValues(Position.Line + 1, Position.Column);
             while (Board.PositionIsValid(position) && CanMove(position))
             {
@@ -47,7 +47,7 @@ namespace console_chess.Chess
             }
 
 
-            // right
+            // E
             position.SetValues(Position.Line, Position.Column + 1);
             while (Board.PositionIsValid(position) && CanMove(position))
             {
@@ -59,7 +59,7 @@ namespace console_chess.Chess
                 position.Column = position.Column + 1;
             }
 
-            // left
+            // W
             position.SetValues(Position.Line, Position.Column - 1);
             while (Board.PositionIsValid(position) && CanMove(position))
             {

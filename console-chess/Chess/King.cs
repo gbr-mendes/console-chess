@@ -24,50 +24,50 @@ namespace console_chess.Chess
         {
             bool[,] moviments = new bool[Board.Lines, Board.Columns];
             Position position = new Position(0, 0);
-            // up
+            // N
             position.SetValues(Position.Line - 1, Position.Column);
             if(Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
-            // ne
+            // NE
             position.SetValues(Position.Line - 1, Position.Column + 1);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
-            // right
+            // E
             position.SetValues(Position.Line, Position.Column + 1);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
-            // se
+            // SE
             position.SetValues(Position.Line + 1, Position.Column + 1);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
-            // down
+            // S
             position.SetValues(Position.Line + 1, Position.Column);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
-            // sle
+            // SW
             position.SetValues(Position.Line + 1, Position.Column - 1);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
-            // left
+            // W
             position.SetValues(Position.Line, Position.Column - 1);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
                 moviments[position.Line, position.Column] = true;
             }
 
-            // nle
+            // NW
             position.SetValues(Position.Line - 1, Position.Column - 1);
             if (Board.PositionIsValid(position) && CanMove(position))
             {
