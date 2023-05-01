@@ -11,7 +11,7 @@ namespace console_chess.Chess
 
         public override string ToString()
         {
-            return "R";
+            return "R ";
         }
     }
 }
