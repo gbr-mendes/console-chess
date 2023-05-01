@@ -34,6 +34,18 @@ namespace board
             piece.Position = position;
         }
 
+        public Piece? RemovePiece(Position position)
+        {
+            Piece piece = Piece(position);
+            if(piece == null)
+            {
+                return null;
+            }
+            piece.Position = null;
+            Pieces[position.Line, position.Column] = null;
+            return piece;
+        }
+
         public bool FilledPosition(Position position)
         {
             ValidatePosition(position);

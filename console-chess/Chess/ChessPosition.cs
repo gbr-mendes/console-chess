@@ -1,6 +1,6 @@
 ﻿using board;
 
-namespace xadrez_console.Chess
+namespace console_chess.Chess
 {
     internal class ChessPosition
     {

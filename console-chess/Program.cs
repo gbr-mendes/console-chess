@@ -9,14 +9,21 @@ namespace console_chess
     {
         private static void Main(string[] args)
         {
-           try
+            try
             {
-                Board board = new Board(8, 8);
-                board.InsertPiece(new Tower(board, Color.Black), new Position(0, 0));
-                board.InsertPiece(new Tower(board, Color.Black), new Position(1, 2));
-                board.InsertPiece(new King(board, Color.Black), new Position(0, 2));
-                Screen.PrintBoard(board);
-            }catch (BoardException e)
+                ChessMate mate = new ChessMate();
+                while (!mate.Finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(mate.Board);
+                    Console.Write("\nOrigin: ");
+                    Position origin = Screen.ReadChessPosition().ToPosition();
+                    Console.Write("Destination: ");
+                    Position destination = Screen.ReadChessPosition().ToPosition();
+                    mate.MovePiece(origin, destination);
+                }
+            }
+            catch (BoardException e)
             {
                 Console.WriteLine(e.Message);
             }
